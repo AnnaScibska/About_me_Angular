@@ -19,6 +19,9 @@ export class LoginComponent implements OnInit {
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     });
+    if (this.authService.isLogged()) {
+      this.router.navigate(['/admin/dashboard']);
+    }
   }
 
   submit() {
