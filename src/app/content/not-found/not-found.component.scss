@@ -1,0 +1,14 @@
+.intro {
+  text-align: center;
+  height: 100%;
+  background-size: cover;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .intro {
+    left: 50%;
+    margin-left: -112px;
+  }
+}

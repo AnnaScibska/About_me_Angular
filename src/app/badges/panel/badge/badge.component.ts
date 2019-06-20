@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Badge} from '../../../core/models/badge';
 
 @Component({
@@ -9,6 +9,7 @@ import {Badge} from '../../../core/models/badge';
 export class BadgeComponent implements OnInit {
 
   @Input() badge: Badge;
+  @Output() emitBadgeName = new EventEmitter <string>();
 
   fullStars = [];
   emptyStars = [];
@@ -19,4 +20,10 @@ export class BadgeComponent implements OnInit {
     this.emptyStars = Array.apply(null, {length: (Badge.starsMax - this.badge.stars)}).map(Number.call, Number);
   }
 
+  emitName() {
+    this.emitBadgeName.emit(this.badge.name);
+  }
 }
+
+
+

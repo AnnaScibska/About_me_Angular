@@ -6,6 +6,7 @@ import { PanelComponent } from './panel/panel.component';
 import { BadgeComponent } from './panel/badge/badge.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [PanelComponent, BadgeComponent],
@@ -13,7 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     BadgesRoutingModule,
     MatCardModule,
-    MatIconModule
-  ]
+    MatIconModule,
+    NgbModule
+  ],
+  exports: [PanelComponent],
+  bootstrap: [PanelComponent]
 })
 export class BadgesModule { }

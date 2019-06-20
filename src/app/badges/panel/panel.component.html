@@ -1,8 +1,22 @@
-<p>badges and certificates</p>
-<p>languages, frameworks & tools</p>
+<h2>badges and certificates - languages, frameworks & tools</h2>
 <p>knowledge level about the basics is represented by the number of stars</p>
 <p>click to see badges and certificates.</p>
 
 <div *ngFor="let badge of badgeList">
-  <app-badge [badge]="badge"></app-badge>
+  <app-badge [badge]="badge" (click)="openBackDropCustomClass(content)" (emitBadgeName)="onEmitName($event)"></app-badge>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{badgeName}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One day a certificate is going to be here&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
