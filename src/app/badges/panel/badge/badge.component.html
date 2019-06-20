@@ -1,0 +1,15 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{badge.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <span *ngFor="let star of fullStars">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">stars</mat-icon>
+      </span>
+      <span *ngFor="let star of emptyStars">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">fiber_manual_record</mat-icon>
+      </span>
+    </div>
+  </mat-card-content>
+</mat-card>

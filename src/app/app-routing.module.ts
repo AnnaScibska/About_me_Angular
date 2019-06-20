@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: './code/code.module#CodeModule'
   },
   {
+    path: 'badges',
+    loadChildren: './badges/badges.module#BadgesModule'
+  },
+  {
     path: '**',
     component: NotFoundComponent
   }
