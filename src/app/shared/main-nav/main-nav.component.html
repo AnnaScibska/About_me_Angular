@@ -1,14 +1,15 @@
 <mat-sidenav-container class="sidenav-container">
   <!--SIDE NAVIGATION BAR-->
   <mat-sidenav
-      #drawer class="sidenav"
+    #drawer class="sidenav"
 
-      fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
     <!--TODO: VIDEO [ngClass]="{hidden: !(isHandset$ | async)?.matches}"-->
-    <mat-toolbar>Menu</mat-toolbar>
+    <!-- TODO: ZNIKNAC GORNE MENU -->
+    <mat-toolbar [ngClass]="isNavHidden ? 'hidden' : ''">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [routerLink]="['/about']">about</a>
       <a mat-list-item [routerLink]="['/']">intro</a>
@@ -19,7 +20,7 @@
 
   <mat-sidenav-content>
     <!--HEADER-->
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" [ngClass]="isNavHidden ? 'hidden' : ''">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -30,10 +31,13 @@
       </button>
       <span>about-me</span>
       <span class="spacer"></span>
-      <a [routerLink]="['/about']">about</a>
-      <a [routerLink]="['/']">intro</a>
-      <a [routerLink]="['/admin']">admin</a>
-      <a [routerLink]="['/code']">code sample</a>
+      <!--<span *ngIf="!isHandset$ | async"> -->
+      <!-- TODO: MENU MA ZNIKAC JAK EKRAN JEST MALY-->
+        <a [routerLink]="['/about']">about</a>
+        <a [routerLink]="['/']">intro</a>
+        <a [routerLink]="['/admin']">admin</a>
+        <a [routerLink]="['/code']">code sample</a>
+      <!--</span>-->
     </mat-toolbar>
     <!--PAGE CONTENT-->
     <ng-content></ng-content>

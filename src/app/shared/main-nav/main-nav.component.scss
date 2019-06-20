@@ -27,16 +27,13 @@ mat-toolbar a {
   text-decoration: none;
 }
 
-//TODO: OUT
-
-//.hidden {
-//  .sidenav {
-//    display: none;
-//  }
-//}
+.hidden {
+  display: none;
+}
 
 @media (min-width: 786px) {
   .sidenav {
     display: none;
   }
 }
+

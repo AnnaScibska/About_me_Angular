@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'hauntedEyes';
+  src: url('./../../../src/assets/fonts/hauntedEyes.otf'),
+  url('./../../../src/assets/fonts/hauntedEyes.ttf') format('truetype');
+}
+
+.intro {
+  text-align: center;
+  //padding: 18em 0;
+  height: 100%;
+  background-size: cover;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .intro {
+    left: 50%;
+    margin-left: -112px;
+  }
+}
+
+h1 {
+  font-size: 100px;
+  font-family: 'hauntedEyes', Arial, serif;
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 60px;
+  }
+}
+
+p {
+  font-family: 'Carrois Gothic SC', Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+  letter-spacing:2px;
+}
